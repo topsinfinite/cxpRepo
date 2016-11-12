@@ -1,0 +1,37 @@
+<ion-view view-title="{{metric.label}}"  hide-nav-bar="false">
+     <ion-nav-buttons side="left">
+                <button class="button button-icon icon ion-navicon" menu-toggle="left"></button>
+      </ion-nav-buttons>
+    <!-- <ion-nav-back-button class="button-clear button-icon ion-arrow-left-c">
+            
+      </ion-nav-back-button>-->
+ <ion-content class="has-header" overflow-scroll="true">
+ <div class="col main-heading">{{metric.title}}</div>
+
+ <div ng-repeat="elem in metricElement" class="list card list-margin">
+   
+   <div class="item item-avatar" href="#">
+        <img ng-src="{{ elem.icon=='' ? 'img/rulz.jpg' : baseImgUrl+'Upload/'+elem.icon }}" class="" />
+       
+      <h2>{{elem.title}}</h2>
+      <p>{{elem.note}}</p>
+      <div class="row pad">
+         <div ng-repeat="smiley in homeSmiley | orderBy:'type'" class="col"><button data-eventid="{{eventId}}" data-elementid="{{elem.id}}" data-metric="{{elem.metricid}}" ng-class="{'button inner-btn':true}" ng-click="onElementClick($event,smiley)" xpsmileycheck>
+          <img ng-src="{{baseImgUrl+'Upload/'+smiley.image}}" width="20" height="20"><br/>{{smiley.label}}
+        </button></div>
+         
+     </div>
+     </div>
+    </div>
+ <div class="row" style="margin-bottom:20px;">
+<div class="col"><button class="button inner-btn" ng-click="onNextClick()">
+  NEXT
+</button></div>
+<div class="col"><button class="button inner-btn" ng-click="onFeedbackSubmit()">
+ SUBMIT FEEDBACK
+</button></div>
+
+</div>
+ <br />
+  </ion-content>
+</ion-view>

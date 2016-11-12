@@ -1,0 +1,29 @@
+<ion-view view-title="Home" hide-back-button="true">
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+  <ion-content>
+  <div class="row">
+  <div class="col label-header" >{{homeLabel}}</div>
+</div>
+
+<div class="row2" style="text-align:center; background:#f8f8f8">
+  <div class=" list card row" ng-repeat="smiley in homeSmiley | orderBy:'type'" >
+  <div class="col"><img ng-src="{{baseImgUrl+'Upload/'+smiley.image}}" width="75" height="75"/></div>
+  <div class="col2" style="color:red; padding:10px;">
+   <div class="row"><div class="col" style="text-align:center;">
+     <button class="button" data-type="{{smiley.type}}" ng-Click="onClick($event,smiley)" data-evt="{{eventId}}">
+       {{smiley.label}}</button></div>
+    </div>
+  </div>
+</div>
+   <div class="row" style="margin-top:20px;">
+     <div class="col"><img src="img/512x512.png" width="80" height="80"/></div> 
+  </div>
+    <br /><br />
+ </div>
+  
+  </ion-content>
+</ion-view>
+

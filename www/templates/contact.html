@@ -1,0 +1,39 @@
+<ion-view view-title="Contact">
+     <ion-nav-buttons side="left">
+                <button class="button button-icon icon ion-navicon" menu-toggle="left"></button>
+      </ion-nav-buttons>
+  <ion-content>
+  <div class="row">
+  <div class="col label-header" >Mind Filling Our Feedback form?</div>
+</div>
+<form novalidate name="form"  >
+ <div class="list">
+     <span style="color:red" ng-show="formInfo.Email.$dirty && formInfo.Email.$invalid">
+         <span ng-show="formInfo.Email.$error.Email">Invalid email address.</span>
+     </span>
+  <label class="item item-input">
+    <input type="text" placeholder="Full Name" ng-model="formInfo.FullName">
+  </label>
+  <label class="item item-input">
+    <input type="email" placeholder="Email" ng-model="formInfo.Email">
+       
+  </label>
+       <label class="item item-input">
+    <input type="tel" placeholder="Phone" ng-model="formInfo.Mobile">
+  </label>
+  <label class="item item-input">
+    <textarea placeholder="Comments" rows="3" ng-model="formInfo.Comment"></textarea>
+  </label>
+       <br /><br />
+       <div class="row">
+          <div class="col">
+          <button class="button inner-btn"  ng-disabled="form.$invalid" ng-click="onFeedbackSubmit()">
+           Submit FeedBack
+        </button>
+        </div>
+      </div>
+       <br /><br />
+</div>
+ </form>
+  </ion-content>
+</ion-view>
